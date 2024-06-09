@@ -3,93 +3,61 @@ import styles from "./page.module.scss";
 
 export default function Home() {
   return (
+    <>
+    <header>
+        <Image 
+        src="/images/logo_company.svg" 
+        alt="logo"
+        width={178}
+        height={42}
+        priority/>
+      <nav>
+        <ul>Home</ul>
+        <ul>About</ul>
+        <ul>Services</ul>
+        <ul>Pages</ul>
+        <ul>Contact</ul>
+      </nav>
+            
+      <button className={`${styles.button_head} button_primary`}>Get a free quote</button>
+      
+    </header>
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+      <section id="home">
+        <div className={styles.home_top}>
+          <div className={styles.home_frame}>
+          <h1 className={styles.text_header}>Quality cleaning for your home</h1>
+          <p className={styles.text_main}>Condimentum mauris sit cursus amet id non neque pharetra nulla ornare sed facilisis senectus dapibus nibh ultrices eget suscipit aliquet et nulla magna lacus penatibus.</p>
+          <div className={styles.home_call}>
+            <button className={`${styles.button_home} button_primary`}>Get a free quote</button>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+            src="/images/small_phone.svg"
+            alt="sp"
+            width={72}
+            height={72}/>
+            <div>
+              <p>Call us now</p>
+              <h1>(414) 567 - 2109</h1>
+            </div>
+          </div>
+          </div>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        src="/images/big_cleaner_woman_top.svg"
+        alt="bcwt"
+        width={720}
+        height={734}
+        priority/>
+        </div>
+        <div className={styles.home_bottom}>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        </div>
+      </section>      
+      <section id="about"></section>
+      <section id="services"></section>
+      <section id="pages"></section>
+      <section id="contact"></section>
     </main>
+    <footer></footer>
+    </>
   );
 }
