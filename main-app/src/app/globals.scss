@@ -70,6 +70,22 @@ a {
   cursor: pointer;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  color: var(--text-color-heading);
+  font-weight: 700;
+}
+
+.text_content{
+  color: var(--text-color-main);
+  font-weight: 400;
+  font-size: var(--text-main);
+}
+
 .header{
   display: flex;
   height: 118px;
@@ -84,7 +100,9 @@ a {
 .header__nav_item{
   margin-right: 22px;
 }
-
+.main__section{
+  margin: 240px 0;  
+}
 .button{   
     border-radius: var(--border-radius);    
     cursor: pointer;    
@@ -99,24 +117,17 @@ a {
 .button_secondary{
     background-color: var(--button-secondary-color);    
     color: var(--secondary-color);
-    border: solid 1px var(--border-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 4px #14142B0A;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-  color: var(--text-color-heading);
-  font-weight: 700;
+.main__hr{
+  border: 0;
+  background: #DCDDEB;
+  max-width: 1220px;
+  height: 1px;
+  margin: 0 auto;
 }
-
-p{
-  color: var(--text-color-main);
-  font-weight: 400;
-}
-
 
 
 @media (prefers-color-scheme: dark) {
