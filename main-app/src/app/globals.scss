@@ -1,7 +1,6 @@
 :root {
   --max-width: 1440px;
-  --border-radius: 14px; 
-  
+  --border-radius: 14px;   
   
   --text-heading-max: 68px;
   --text-heading-middle: 54px;
@@ -71,22 +70,22 @@ a {
   cursor: pointer;
 }
 
-header{
+.header{
   display: flex;
   height: 118px;
   justify-content: space-evenly;
   align-items: center;
   font-size: var(--text-lower-main);
-  nav{
-    display: flex;
-    margin-left: 40px;
-  }
-  ul{
-    margin-right: 22px;
-  }
+}
+.header__nav{
+  display: flex;
+  margin-left: 40px;
+}
+.header__nav_item{
+  margin-right: 22px;
 }
 
-button{   
+.button{   
     border-radius: var(--border-radius);    
     cursor: pointer;    
 }

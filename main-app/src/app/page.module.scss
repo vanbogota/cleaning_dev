@@ -1,11 +1,11 @@
 //my css
-.button_head{    
+.header__button{    
     width: 174px;
     height: 54px;
     font-size: var(--text-small);
 }
 
-.button_home{
+.home__button{
     width: 217px;
     height: 72px;
     font-size: var(--text-lower-main);
@@ -16,26 +16,35 @@
   flex-direction: column;    
 }
 
-.home_top{
+.main__home_top{
   display: flex;
   justify-content: flex-end;
-  .text_header{
-    font-size: var(--text-heading-max);
-    max-width: 518px;
-  }
-  .text_main{
-    font-size: var(--text-main);
-  }
 }
-
-.home_call{
-  display: flex;
-}
-
-.home_frame{
+.main__home_frame{
   margin-left: 110px;
   margin-top: 230px;
 }
+.main__home_text_header{
+  font-size: var(--text-heading-max);
+  max-width: 518px;
+  margin-bottom: 22px;
+}
+.main__home_text{
+  font-size: var(--text-main);
+  margin-bottom: 34px;
+}
+.main__home_call{
+  display: flex;
+  align-items: center;
+  .main__home_call_img{
+    margin:0 18px 0 28px;
+  }
+  p{
+    margin-bottom: 4px;
+  }
+}  
+
+
 
 //from tamplate
 
