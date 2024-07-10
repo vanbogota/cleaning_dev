@@ -68,6 +68,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <hr className="main__hr" />
         <section className="main__section" id="about">
           <div className={styles.main__home_bottom}>
             <h3 className={styles.main__home_bottom_title}>How our service works?</h3>
@@ -132,7 +133,7 @@ export default function Home() {
                 height={190}
               />
               <h5 className={styles.main__services_card_title}>House cleaning</h5>
-              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
+              <p className={`text text_size_m ${styles.main__services_card_text}`}>{TextVariables.houseCleaning}</p>
             </div>
             <div className={styles.main__services_card}>
               <Image
@@ -143,7 +144,7 @@ export default function Home() {
                 height={224}
               />
               <h5 className={styles.main__services_card_title}>Office cleaning</h5>
-              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
+              <p className={`text text_size_m ${styles.main__services_card_text}`}>{TextVariables.officeCleaning}</p>
             </div>
             <div className={styles.main__services_card}>
               <Image
@@ -153,8 +154,8 @@ export default function Home() {
                 width={250}
                 height={220}
               />
-              <h5 className={styles.main__services_card_title}>Industrial cleaning</h5>
-              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
+              <h5 className={styles.main__services_card_title}>Moving cleaning</h5>
+              <p className={`text text_size_m ${styles.main__services_card_text}`}>{TextVariables.movingCleaning}</p>
             </div>
           </div>
           <div className={styles.main__services_covid}>
@@ -178,7 +179,7 @@ export default function Home() {
               <p className={`text text_size_m ${styles.main__services_covid_text}`}
                 style={{ color: "white" }}
               >
-                <span style={{ color: "red" }}>We could to write some text here:</span> Lobortis mattis odio leo eget mauris met aliquet semper molestie sollicitudin congue massa mauris lectus.
+                {TextVariables.covidText}
               </p>
               <div className={styles.main__services_covid_call}>
                 <GetQuoteButton
@@ -212,7 +213,7 @@ export default function Home() {
             <div className={styles.main__services_description_content}>
               <h3 className={styles.main__services_description_title}>We cover all areas of your home or office</h3>
               <p className={`text text_size_s ${styles.main__services_description_text}`}>
-                <span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                {TextVariables.weCoverAllAreas}
               </p>
               <div className={styles.main__services_areas}>
                 <ul className={styles.main__services_areas_list}>
@@ -235,8 +236,8 @@ export default function Home() {
           <div className={styles.main__services_differencies}>
             <div className={styles.main__services_differencies_content}>
               <h3 className={styles.main__services_differencies_title}>What makes us different?</h3>
-              <p className={`text text_size_s ${styles.main__services_differencies_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-              <p className={`text text_size_s ${styles.main__services_differencies_text}`}>Sed ut perspiciatis unde omnis iste natus error sit atem accusantium doloremque laudantiu sed ut.</p>
+              <p className={`text text_size_s ${styles.main__services_differencies_text}`}>{TextVariables.whatMakesUsDif}</p>
+              <p className={`text text_size_s ${styles.main__services_differencies_text}`}>To date, we have much to be proud of:</p>
               <ul className={styles.main__services_differencies_pluses}>
                 <li>
                   <h2>10<span className="span_color_blue">+</span></h2>
@@ -273,7 +274,7 @@ export default function Home() {
         >
           <div className={styles.main__contact_content}>
             <h3 className={styles.main__contact_title}>Request a free cleaning quote today</h3>
-            <p className={`text text_size_m ${styles.main__contact_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> In dignissim euismod pretium amet enim a eu nam ut urna accumsan pellentesque lacus duis pharetra eutortor.</p>
+            <p className={`text text_size_m ${styles.main__contact_text}`}>{TextVariables.requestQuoteToday}</p>
             <div className={styles.call_us_now} style={{ marginLeft: 0 }}>
               <Image
                 className={styles.call_us_now__img}
@@ -288,7 +289,7 @@ export default function Home() {
             </div>
             <hr className={styles.contact__hr} />
             <h4 className={styles.main__contact_title}>Not convinced yet?</h4>
-            <p className={`text text_size_m ${styles.main__contact_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Massa bibendum consectetur maurisid gravida purus, dolor dui amet morbi non nunc urna purus diam.</p>
+            <p className={`text text_size_m ${styles.main__contact_text}`}>{TextVariables.notConvincedYet}</p>
           </div>
           <form action="" className={styles.orderForm}>
             <div className={styles.orderForm__group}>
@@ -340,7 +341,7 @@ export default function Home() {
             <h4 className={styles.container__block__title}>
               Quality cleaning for your home
             </h4>
-            <p className={`text text_size_s`}><span style={{ color: "red" }}>We could to write some text here:</span> Just try once and you will see it.</p>
+            <p className={`text text_size_s`}>{TextVariables.footerText}</p>
           </div>
           <div className={styles.container__block}>
             <h6 className={styles.container__block__title}>
