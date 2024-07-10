@@ -34,14 +34,9 @@
   font-size: var(--text-button-main);
 }
 
-.main__home_top {
-  display: flex;
-  justify-content: space-between;
-}
-
-.main__home_frame {
-  margin-left: 110px;
-  margin-top: 230px;
+//.section__home 
+.container_space_between{  
+  justify-content: space-between;  
 }
 
 .main__home_title {
@@ -52,6 +47,7 @@
 .main__home_text {
   margin-bottom: 34px;
   max-width: 591px;
+  text-align: justify;
 }
 
 .main__home_call {
@@ -99,8 +95,8 @@
   margin-bottom: 21px;
 }
 
-.main__home_bottom_text {
-  max-width: 648px;
+.about__text_intro {
+  max-width: 1000px;
   text-align: center;
 }
 
@@ -130,39 +126,9 @@
   gap: 28px;
 }
 
-.main__about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.main__about_title {
-  margin-bottom: 13px;
-  max-width: 608px;
-  text-align: center;
-}
-
-.main__about_text {
-  max-width: 702px;
-  text-align: center;
-}
-
-.main__about_collection {
-  margin: 32px 0 40px;
-  display: flex;
-  max-width: 750px;
-}
-
-.main__services_heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 62px;
-}
-
 .main__services_heading_title {
   max-width: 475px;
+  margin-bottom: 62px;
 }
 
 .main__services_cards {
@@ -292,6 +258,10 @@
   }
 }
 
+.main__services_differencies_content{
+  max-width: 500px;
+}
+
 .p__differencies_pluses {
   font-size: var(--text-content-medium);
   font-weight: 700;
@@ -361,17 +331,17 @@
 }
 
 .orderForm__input::placeholder {
-  color: transparent;
+  //color: transparent;
   font-size: var(--text-content-medium);
 }
 
 .orderForm__input::-moz-placeholder {
-  color: transparent;
+  //color: transparent;
   font-size: var(--text-content-medium);
 }
 
 .orderForm__input::-webkit-placeholder {
-  color: transparent;
+  //color: transparent;
   font-size: var(--text-content-medium);
 }
 
@@ -391,6 +361,7 @@
   margin: 140px 0 116px;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 10px;
 }
 
 .container__block {

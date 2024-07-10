@@ -2,15 +2,14 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import { useRef } from "react";
-
-const telNumber = "+358 45 893-50-05";
-const eMail = "notos.oy@gmail.com";
-const adress = "Marjaniementie 10 B, 00930, Helsinki"
+import GetQuoteButton from "@/components/GetQuoteButton";
+import ExploreServicesButton from "@/components/ExploreServicesButton";
+import * as TextVariables from "@/utils/textVariables";
 
 export default function Home() {
+  const refToContact = useRef<HTMLElement>(null);
 
-
-  const refToContact = useRef<HTMLElement>(null)
+  const refToServices = useRef<HTMLElement>(null);
 
   const scrollToSection = (element: React.RefObject<HTMLElement>) => {
     if (element.current) {
@@ -21,37 +20,29 @@ export default function Home() {
   return (
     <>
       <header className="header">
-        {/* <Image
-          src={"./images/logo_company.svg"}
-          alt="logo"
-          width={178}
-          height={42}
-          priority /> */}
-        <h4>Notos Oy</h4>
+        <h4>{TextVariables.companyName}</h4>
         <nav className="header__nav">
-          <ul className="header__nav_item"><a href="#home_top">Home</a></ul>
-          <ul className="header__nav_item"><a href="#home_bottom">About</a></ul>
+          <ul className="header__nav_item"><a href="#home">Home</a></ul>
+          <ul className="header__nav_item"><a href="#about">About</a></ul>
           <ul className="header__nav_item"><a href="#services">Services</a></ul>
           <ul className="header__nav_item"><a href="#contact">Contact</a></ul>
         </nav>
-        <button
+        <GetQuoteButton
+          onClick={() => scrollToSection(refToContact)}          
           className={`button button_primary ${styles.header__button}`}
-          onClick={() => scrollToSection(refToContact)}>
-          Get a quote
-        </button>
+        />
       </header>
       <main className={styles.main}>
-        <section id="home_top">
-          <div className={styles.main__home_top}>
-            <div className={styles.main__home_frame}>
+        <section className="main__section" id="home">
+          <div className={`container ${styles.container_space_between}`}>
+            <div className={styles.section__home}>
               <h1 className={styles.main__home_title}>Quality cleaning for your home</h1>
-              <p className={`text text_size_m ${styles.main__home_text}`} ><span style={{ color: "red" }}>We need to write some text here:</span> Condimentum mauris sit cursus amet id non neque pharetra nulla ornare sed facilisis senectus dapibus nibh ultrices eget suscipit aliquet et nulla magna lacus penatibus.</p>
+              <p className={`text text_size_m ${styles.main__home_text}`} >{TextVariables.homeSectionText}</p>
               <div className={styles.main__home_call}>
-                <button
+                <GetQuoteButton
+                  onClick={() => scrollToSection(refToContact)}                  
                   className={`button button_primary ${styles.main__button}`}
-                  onClick={() => scrollToSection(refToContact)}>
-                  Get a quote
-                </button>
+                />
                 <div className={styles.call_us_now}>
                   <Image
                     className={styles.call_us_now__img}
@@ -61,7 +52,7 @@ export default function Home() {
                     height={72} />
                   <div className={styles.call_us_now__frame}>
                     <p className={styles.call_us_now__text}>CALL US NOW</p>
-                    <p className={styles.call_us_now__number}>{telNumber}</p>
+                    <p className={styles.call_us_now__number}>{TextVariables.telNumber}</p>
                   </div>
                 </div>
               </div>
@@ -77,10 +68,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="main__section" id="home_bottom">
+        <section className="main__section" id="about">
           <div className={styles.main__home_bottom}>
             <h3 className={styles.main__home_bottom_title}>How our service works?</h3>
-            <p className={`text text_size_m ${styles.main__home_bottom_text}`}><span style={{ color: "red" }}>We need to write some text here:</span>Sagittis nibh scelerisque vitae eget vulputate sem elementum sed neque nisi felis non ultrices massa id egestas quam velit pretium nu.</p>
+            <p className={`text text_size_m ${styles.about__text_intro}`}>{TextVariables.serviceStepsText}</p>
             <div className={styles.main__home_bottom_steps}>
               <div className={styles.main__home_bottom_step}>
                 <Image
@@ -91,7 +82,7 @@ export default function Home() {
                   height={240}
                 />
                 <h4 className={styles.main__home_bottom_step_title}>1. Schedule online</h4>
-                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{ color: "red" }}>We need to write some text here:</span>Sagittis nibh scelerisque vitae egetolment vulputate sem elementum sed n.</p>
+                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}>{TextVariables.scheduleOnline}</p>
               </div>
               <div className={styles.main__home_bottom_step}>
                 <Image
@@ -101,8 +92,8 @@ export default function Home() {
                   width={240}
                   height={240}
                 />
-                <h4 className={styles.main__home_bottom_step_title}>2. Pay online easily</h4>
-                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{ color: "red" }}>We need to write some text here:</span>Vitae ut accumsan blandit ullamcorperolm suscipit dui gravida amet at nunc.</p>
+                <h4 className={styles.main__home_bottom_step_title}>2. Get your house cleaned</h4>
+                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}>{TextVariables.getYourHouseCleaned}</p>
               </div>
               <div className={styles.main__home_bottom_step}>
                 <Image
@@ -112,26 +103,25 @@ export default function Home() {
                   width={240}
                   height={240}
                 />
-                <h4 className={styles.main__home_bottom_step_title}>3. Get your house cleaned</h4>
-                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{ color: "red" }}>We need to write some text here:</span>Nunc maecenas sollicitudin metus tellus mattis sed porttitor cursus eleifend.</p>
+                <h4 className={styles.main__home_bottom_step_title}>3. Pay easily</h4>
+                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}>{TextVariables.payEasily}</p>
               </div>
             </div>
             <div className={styles.main__home_bottom_buttons}>
-              <button
+              <GetQuoteButton
+                onClick={() => scrollToSection(refToContact)}                
                 className={`button button_primary ${styles.main__button}`}
-                onClick={() => scrollToSection(refToContact)}>
-                Get a quote
-              </button>
-              <button className={`button button_secondary ${styles.main__button}`}>Explore services</button>
+              />
+              <ExploreServicesButton
+                onClick={() => scrollToSection(refToServices)}                
+                className={`button button_secondary ${styles.main__button}`}
+              />
             </div>
           </div>
         </section>
         <hr className="main__hr" />
-        <section className="main__section" id="services">
-          <div className={styles.main__services_heading}>
-            <h3 className={styles.main__services_heading_title}>Take a look at our professional services</h3>
-            <button className={`button button_secondary ${styles.main__button}`}>Explore services</button>
-          </div>
+        <section className="main__section" id="services" ref={refToServices}>
+          <h3 className={styles.main__services_heading_title}>Take a look at our professional services</h3>
           <div className={styles.main__services_cards}>
             <div className={styles.main__services_card}>
               <Image
@@ -175,8 +165,6 @@ export default function Home() {
                 alt="bcwc"
                 layout="fill"
                 objectFit="cover"
-                // width={518}
-                // height={676}
                 priority
               />
             </div>
@@ -193,11 +181,10 @@ export default function Home() {
                 <span style={{ color: "red" }}>We could to write some text here:</span> Lobortis mattis odio leo eget mauris met aliquet semper molestie sollicitudin congue massa mauris lectus.
               </p>
               <div className={styles.main__services_covid_call}>
-                <button
+                <GetQuoteButton
                   className={`button button_primary ${styles.main__button}`}
-                  onClick={() => scrollToSection(refToContact)}>
-                  Get a quote
-                </button>
+                  onClick={() => scrollToSection(refToContact)}                  
+                />
                 <div className={styles.call_us_now}>
                   <Image
                     className={styles.call_us_now__img}
@@ -207,7 +194,7 @@ export default function Home() {
                     height={72} />
                   <div className={styles.call_us_now__frame}>
                     <p className={styles.call_us_now__text} style={{ color: "white" }}>CALL US NOW</p>
-                    <p className={styles.call_us_now__number} style={{ color: "white" }}>{telNumber}</p>
+                    <p className={styles.call_us_now__number} style={{ color: "white" }}>{TextVariables.telNumber}</p>
                   </div>
                 </div>
               </div>
@@ -220,8 +207,6 @@ export default function Home() {
                 alt="bh"
                 layout="fill"
                 objectFit="cover"
-              // width={640}
-              // height={680}
               />
             </div>
             <div className={styles.main__services_description_content}>
@@ -241,11 +226,10 @@ export default function Home() {
                   <li>Windows</li>
                 </ul>
               </div>
-              <button
+              <GetQuoteButton
                 className={`button button_primary ${styles.main__button}`}
-                onClick={() => scrollToSection(refToContact)}>
-                Get a quote
-              </button>
+                onClick={() => scrollToSection(refToContact)}                
+              />
             </div>
           </div>
           <div className={styles.main__services_differencies}>
@@ -267,11 +251,10 @@ export default function Home() {
                   <p className={styles.p__differencies_pluses}>Jobs done</p>
                 </li>
               </ul>
-              <button
+              <GetQuoteButton
                 className={`button button_primary ${styles.main__button}`}
-                onClick={() => scrollToSection(refToContact)}>
-                Get a quote
-              </button>
+                onClick={() => scrollToSection(refToContact)}                
+              />
             </div>
             <div className={styles.image_wrapper_forth}>
               <Image
@@ -279,8 +262,6 @@ export default function Home() {
                 alt="bcm"
                 layout="fill"
                 objectFit="cover"
-              // width={686}
-              // height={589}
               />
             </div>
           </div>
@@ -302,14 +283,14 @@ export default function Home() {
                 height={72} />
               <div className={styles.call_us_now__frame}>
                 <p className={styles.call_us_now__text}>CALL US NOW</p>
-                <p className={styles.call_us_now__number}>{telNumber}</p>
+                <p className={styles.call_us_now__number}>{TextVariables.telNumber}</p>
               </div>
             </div>
             <hr className={styles.contact__hr} />
             <h4 className={styles.main__contact_title}>Not convinced yet?</h4>
             <p className={`text text_size_m ${styles.main__contact_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Massa bibendum consectetur maurisid gravida purus, dolor dui amet morbi non nunc urna purus diam.</p>
           </div>
-          <form action="/" className={styles.orderForm}>
+          <form action="" className={styles.orderForm}>
             <div className={styles.orderForm__group}>
               <label htmlFor="name" className={styles.orderForm__label}>Full name</label>
               <input type="text" name="name" id="name" className={styles.orderForm__input} />
@@ -346,6 +327,7 @@ export default function Home() {
                 id="note"
                 maxLength={200}
                 className={`${styles.orderForm__input} ${styles.orderForm__textarea}`}
+                spellCheck="true"
               />
             </div>
             <button type="submit" className={`button button_primary ${styles.main__button}`}>Submit message</button>
@@ -364,9 +346,9 @@ export default function Home() {
             <h6 className={styles.container__block__title}>
               Contact us
             </h6>
-            <p className={`text text_size_s`}>{adress}</p>
-            <p className={`text text_size_s`}>{telNumber}</p>
-            <p className={`text text_size_s`}>{eMail}</p>
+            <p className={`text text_size_s`}>{TextVariables.adress}</p>
+            <p className={`text text_size_s`}>{TextVariables.telNumber}</p>
+            <p className={`text text_size_s`}>{TextVariables.eMail}</p>
           </div>
           <div className={styles.container__block}>
             <h6 className={styles.container__block__title}>
@@ -381,24 +363,17 @@ export default function Home() {
             <h6 className={styles.container__block__title}>
               Get a free estimate
             </h6>
-            <p className={styles.call_us_now__number} style={{ color: "#0075FF" }}>{telNumber}</p>
+            <p className={styles.call_us_now__number} style={{ color: "#0075FF" }}>{TextVariables.telNumber}</p>
             <p className={`text text_size_s ${styles.container__block_text}`}>Don&apos;t wait, call us now!</p>
-            <button
+            <GetQuoteButton
               className={`button button_primary ${styles.main__button}`}
-              onClick={() => scrollToSection(refToContact)}>
-              Request a quote
-            </button>
+              onClick={() => scrollToSection(refToContact)}              
+            />
           </div>
         </div>
         <hr className="main__hr" />
         <div className={`container ${styles.footer__container} ${styles.footer__container_bottom}`}>
-          {/* <Image
-            src={"./images/logo_company.svg"}
-            alt="logo"
-            width={178}
-            height={42}
-            priority /> */}
-          <h4>Notos Oy</h4>
+          <h4>{TextVariables.companyName}</h4>
           <p className={`text text_size_s text_marging_left`}>Designed by <span className="span_color_blue">BRIX Templates</span> - Edited by <span className="span_color_blue">Ivan Bogdanov</span></p>
         </div>
       </footer>
