@@ -21,12 +21,13 @@ export default function Home() {
   return (
     <>
       <header className="header">
-        <Image
+        {/* <Image
           src={"./images/logo_company.svg"}
           alt="logo"
           width={178}
           height={42}
-          priority />
+          priority /> */}
+        <h4>Notos Oy</h4>
         <nav className="header__nav">
           <ul className="header__nav_item"><a href="#home_top">Home</a></ul>
           <ul className="header__nav_item"><a href="#home_bottom">About</a></ul>
@@ -44,7 +45,7 @@ export default function Home() {
           <div className={styles.main__home_top}>
             <div className={styles.main__home_frame}>
               <h1 className={styles.main__home_title}>Quality cleaning for your home</h1>
-              <p className={`text text_size_m ${styles.main__home_text}`} ><span style={{color: "red"}}>We need to write some text here:</span> Condimentum mauris sit cursus amet id non neque pharetra nulla ornare sed facilisis senectus dapibus nibh ultrices eget suscipit aliquet et nulla magna lacus penatibus.</p>
+              <p className={`text text_size_m ${styles.main__home_text}`} ><span style={{ color: "red" }}>We need to write some text here:</span> Condimentum mauris sit cursus amet id non neque pharetra nulla ornare sed facilisis senectus dapibus nibh ultrices eget suscipit aliquet et nulla magna lacus penatibus.</p>
               <div className={styles.main__home_call}>
                 <button
                   className={`button button_primary ${styles.main__button}`}
@@ -65,19 +66,21 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Image
-              className={styles.main__home_top_img}
-              src={"./images/big_cleaner_woman_top.svg"}
-              alt="bcwt"
-              width={720}
-              height={734}
-              priority />
+            <div className={styles.image_wrapper_first}>
+              <Image
+                className={styles.main__img_home_top}
+                src={"./images/big_cleaner_woman_top.svg"}
+                alt="bcwt"
+                layout="fill"
+                objectFit="cover"
+                priority />
+            </div>
           </div>
         </section>
         <section className="main__section" id="home_bottom">
           <div className={styles.main__home_bottom}>
             <h3 className={styles.main__home_bottom_title}>How our service works?</h3>
-            <p className={`text text_size_m ${styles.main__home_bottom_text}`}><span style={{color: "red"}}>We need to write some text here:</span>Sagittis nibh scelerisque vitae eget vulputate sem elementum sed neque nisi felis non ultrices massa id egestas quam velit pretium nu.</p>
+            <p className={`text text_size_m ${styles.main__home_bottom_text}`}><span style={{ color: "red" }}>We need to write some text here:</span>Sagittis nibh scelerisque vitae eget vulputate sem elementum sed neque nisi felis non ultrices massa id egestas quam velit pretium nu.</p>
             <div className={styles.main__home_bottom_steps}>
               <div className={styles.main__home_bottom_step}>
                 <Image
@@ -88,7 +91,7 @@ export default function Home() {
                   height={240}
                 />
                 <h4 className={styles.main__home_bottom_step_title}>1. Schedule online</h4>
-                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{color: "red"}}>We need to write some text here:</span>Sagittis nibh scelerisque vitae egetolment vulputate sem elementum sed n.</p>
+                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{ color: "red" }}>We need to write some text here:</span>Sagittis nibh scelerisque vitae egetolment vulputate sem elementum sed n.</p>
               </div>
               <div className={styles.main__home_bottom_step}>
                 <Image
@@ -99,7 +102,7 @@ export default function Home() {
                   height={240}
                 />
                 <h4 className={styles.main__home_bottom_step_title}>2. Pay online easily</h4>
-                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{color: "red"}}>We need to write some text here:</span>Vitae ut accumsan blandit ullamcorperolm suscipit dui gravida amet at nunc.</p>
+                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{ color: "red" }}>We need to write some text here:</span>Vitae ut accumsan blandit ullamcorperolm suscipit dui gravida amet at nunc.</p>
               </div>
               <div className={styles.main__home_bottom_step}>
                 <Image
@@ -110,7 +113,7 @@ export default function Home() {
                   height={240}
                 />
                 <h4 className={styles.main__home_bottom_step_title}>3. Get your house cleaned</h4>
-                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{color: "red"}}>We need to write some text here:</span>Nunc maecenas sollicitudin metus tellus mattis sed porttitor cursus eleifend.</p>
+                <p className={`text text_size_m ${styles.main__home_bottom_step_text}`}><span style={{ color: "red" }}>We need to write some text here:</span>Nunc maecenas sollicitudin metus tellus mattis sed porttitor cursus eleifend.</p>
               </div>
             </div>
             <div className={styles.main__home_bottom_buttons}>
@@ -123,61 +126,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <hr className="main__hr" />
-        {/* <section className={`main__section ${styles.main__about}`} id="about">
-          <h3 className={styles.main__about_title}>Our cleaning services have no comparison</h3>
-          <p className={`text text_size_m ${styles.main__about_text}`}>Lobortis mattis odio leo eget mauris met aliquet semper molestie sollicitudin congue massa mauris lectus vitae cras viverra gravida sapien.</p>
-          <div className={styles.main__about_collection}>
-            <div className={styles.main__about_collection_item}>
-              <div className={styles.call_us_now}>
-                <Image
-                  className={styles.call_us_now__img}
-                  src="./images/small_heart.svg"
-                  alt="sh"
-                  width={72}
-                  height={72} />
-                <div className={styles.call_us_now__frame}>
-                  <p className={styles.call_us_now__text}>CLIENTS</p>
-                  <p className={styles.call_us_now__number}>30+</p>
-                </div>
-              </div>
-            </div>
-            <div className={styles.main__about_collection_item}>
-              <div className={styles.call_us_now}>
-                <Image
-                  className={styles.call_us_now__img}
-                  src="./images/small_done.svg"
-                  alt="sd"
-                  width={72}
-                  height={72} />
-                <div className={styles.call_us_now__frame}>
-                  <p className={styles.call_us_now__text}>JOBS DONE</p>
-                  <p className={styles.call_us_now__number}>1000+</p>
-                </div>
-              </div>
-            </div>
-            <div className={styles.main__about_collection_item}>
-              <div className={styles.call_us_now}>
-                <Image
-                  className={styles.call_us_now__img}
-                  src="./images/small_employee.svg"
-                  alt="se"
-                  width={72}
-                  height={72} />
-                <div className={styles.call_us_now__frame}>
-                  <p className={styles.call_us_now__text}>EMPLOYEES</p>
-                  <p className={styles.call_us_now__number}>3+</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <Image
-            className={styles.main__about_video}
-            src={"./images/video.png"}
-            alt="video"
-            width={1012}
-            height={570} />
-        </section> */}
         <hr className="main__hr" />
         <section className="main__section" id="services">
           <div className={styles.main__services_heading}>
@@ -194,7 +142,7 @@ export default function Home() {
                 height={190}
               />
               <h5 className={styles.main__services_card_title}>House cleaning</h5>
-              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{color: "red"}}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
+              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
             </div>
             <div className={styles.main__services_card}>
               <Image
@@ -205,7 +153,7 @@ export default function Home() {
                 height={224}
               />
               <h5 className={styles.main__services_card_title}>Office cleaning</h5>
-              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{color: "red"}}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
+              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
             </div>
             <div className={styles.main__services_card}>
               <Image
@@ -216,18 +164,22 @@ export default function Home() {
                 height={220}
               />
               <h5 className={styles.main__services_card_title}>Industrial cleaning</h5>
-              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{color: "red"}}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
+              <p className={`text text_size_m ${styles.main__services_card_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est.</p>
             </div>
           </div>
           <div className={styles.main__services_covid}>
-            <Image
-              className={styles.main__services_covid_img}
-              src={"./images/big_cleaner_woman_center.svg"}
-              alt="bcwc"
-              width={518}
-              height={676}
-              priority
-            />
+            <div className={styles.image_wrapper_second}>
+              <Image
+                className={styles.main__services_covid_img}
+                src={"./images/big_cleaner_woman_center.svg"}
+                alt="bcwc"
+                layout="fill"
+                objectFit="cover"
+                // width={518}
+                // height={676}
+                priority
+              />
+            </div>
             <div className={styles.main__services_covid_content}>
               <p className={styles.main__services_covid_title_mini}>COVID-19 SANITIZATION</p>
               <h3 className={styles.main__services_covid_title}
@@ -238,7 +190,7 @@ export default function Home() {
               <p className={`text text_size_m ${styles.main__services_covid_text}`}
                 style={{ color: "white" }}
               >
-                <span style={{color: "red"}}>We could to write some text here:</span> Lobortis mattis odio leo eget mauris met aliquet semper molestie sollicitudin congue massa mauris lectus.
+                <span style={{ color: "red" }}>We could to write some text here:</span> Lobortis mattis odio leo eget mauris met aliquet semper molestie sollicitudin congue massa mauris lectus.
               </p>
               <div className={styles.main__services_covid_call}>
                 <button
@@ -262,16 +214,20 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.main__services_description}>
-            <Image
-              src={"./images/big_house.svg"}
-              alt="bh"
-              width={640}
-              height={680}
-            />
+            <div className={styles.image_wrapper_three}>
+              <Image
+                src={"./images/big_house.svg"}
+                alt="bh"
+                layout="fill"
+                objectFit="cover"
+              // width={640}
+              // height={680}
+              />
+            </div>
             <div className={styles.main__services_description_content}>
               <h3 className={styles.main__services_description_title}>We cover all areas of your home or office</h3>
               <p className={`text text_size_s ${styles.main__services_description_text}`}>
-              <span style={{color: "red"}}>We could to write some text here:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                <span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
               </p>
               <div className={styles.main__services_areas}>
                 <ul className={styles.main__services_areas_list}>
@@ -295,7 +251,7 @@ export default function Home() {
           <div className={styles.main__services_differencies}>
             <div className={styles.main__services_differencies_content}>
               <h3 className={styles.main__services_differencies_title}>What makes us different?</h3>
-              <p className={`text text_size_s ${styles.main__services_differencies_text}`}><span style={{color: "red"}}>We could to write some text here:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p className={`text text_size_s ${styles.main__services_differencies_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
               <p className={`text text_size_s ${styles.main__services_differencies_text}`}>Sed ut perspiciatis unde omnis iste natus error sit atem accusantium doloremque laudantiu sed ut.</p>
               <ul className={styles.main__services_differencies_pluses}>
                 <li>
@@ -317,12 +273,16 @@ export default function Home() {
                 Get a quote
               </button>
             </div>
-            <Image
-              src={"./images/big_cleaner_man.svg"}
-              alt="bcm"
-              width={686}
-              height={589}
-            />
+            <div className={styles.image_wrapper_forth}>
+              <Image
+                src={"./images/big_cleaner_man.svg"}
+                alt="bcm"
+                layout="fill"
+                objectFit="cover"
+              // width={686}
+              // height={589}
+              />
+            </div>
           </div>
         </section>
         <section
@@ -332,7 +292,7 @@ export default function Home() {
         >
           <div className={styles.main__contact_content}>
             <h3 className={styles.main__contact_title}>Request a free cleaning quote today</h3>
-            <p className={`text text_size_m ${styles.main__contact_text}`}><span style={{color: "red"}}>We could to write some text here:</span> In dignissim euismod pretium amet enim a eu nam ut urna accumsan pellentesque lacus duis pharetra eutortor.</p>
+            <p className={`text text_size_m ${styles.main__contact_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> In dignissim euismod pretium amet enim a eu nam ut urna accumsan pellentesque lacus duis pharetra eutortor.</p>
             <div className={styles.call_us_now} style={{ marginLeft: 0 }}>
               <Image
                 className={styles.call_us_now__img}
@@ -347,7 +307,7 @@ export default function Home() {
             </div>
             <hr className={styles.contact__hr} />
             <h4 className={styles.main__contact_title}>Not convinced yet?</h4>
-            <p className={`text text_size_m ${styles.main__contact_text}`}><span style={{color: "red"}}>We could to write some text here:</span> Massa bibendum consectetur maurisid gravida purus, dolor dui amet morbi non nunc urna purus diam.</p>
+            <p className={`text text_size_m ${styles.main__contact_text}`}><span style={{ color: "red" }}>We could to write some text here:</span> Massa bibendum consectetur maurisid gravida purus, dolor dui amet morbi non nunc urna purus diam.</p>
           </div>
           <form action="/" className={styles.orderForm}>
             <div className={styles.orderForm__group}>
@@ -398,7 +358,7 @@ export default function Home() {
             <h4 className={styles.container__block__title}>
               Quality cleaning for your home
             </h4>
-            <p className={`text text_size_s`}><span style={{color: "red"}}>We could to write some text here:</span> Just try once and you will see it.</p>
+            <p className={`text text_size_s`}><span style={{ color: "red" }}>We could to write some text here:</span> Just try once and you will see it.</p>
           </div>
           <div className={styles.container__block}>
             <h6 className={styles.container__block__title}>
@@ -432,12 +392,13 @@ export default function Home() {
         </div>
         <hr className="main__hr" />
         <div className={`container ${styles.footer__container} ${styles.footer__container_bottom}`}>
-          <Image
+          {/* <Image
             src={"./images/logo_company.svg"}
             alt="logo"
             width={178}
             height={42}
-            priority />
+            priority /> */}
+          <h4>Notos Oy</h4>
           <p className={`text text_size_s text_marging_left`}>Designed by <span className="span_color_blue">BRIX Templates</span> - Edited by <span className="span_color_blue">Ivan Bogdanov</span></p>
         </div>
       </footer>

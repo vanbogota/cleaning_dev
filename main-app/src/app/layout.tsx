@@ -1,7 +1,7 @@
+import "@/styles/reset.css";
 import type { Metadata } from "next";
-import "./reset.css";
 import { Roboto } from "next/font/google";
-import "./globals.scss";
+import "@/styles/globals.scss";
 
 const inter = Roboto({ weight: "400", style: "normal", subsets:['latin'] });
 

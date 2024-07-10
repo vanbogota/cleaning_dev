@@ -1,4 +1,28 @@
 //my css
+.image_wrapper_first{
+  position: relative;
+  width: 50vw;
+  height: 50.97vw;  
+}
+
+.image_wrapper_second{
+  position: relative;
+  width: 36vw;
+  height: 47vw;  
+}
+
+.image_wrapper_three{
+  position: relative;
+  width: 44.4vw;
+  height: 47.18vw;
+}
+
+.image_wrapper_forth{
+  position: relative;
+  width: 47.64vw;
+  height: 40.9vw;
+}
+
 .header__button {
   padding: 17px 24px;
   font-size: var(--text-button-small);
@@ -315,7 +339,7 @@
 .orderForm__textarea {
   grid-column: 1/-1;
   grid-row: 4;
-  width: 550px !important;  
+  width: 550px !important;
 }
 
 .orderForm__label {
@@ -325,7 +349,6 @@
 }
 
 .orderForm__input {
-  width: 259px;
   height: 72px;
   box-sizing: border-box;
   margin-top: 12px;
