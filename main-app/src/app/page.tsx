@@ -5,8 +5,11 @@ import { useRef } from "react";
 import GetQuoteButton from "@/components/GetQuoteButton";
 import ExploreServicesButton from "@/components/ExploreServicesButton";
 import * as TextVariables from "@/utils/textVariables";
+import NavBar from "@/components/NavBar";
 
 export default function Home() {
+  const sections = ['Home', 'About', 'Services', 'Contact'];
+
   const refToContact = useRef<HTMLElement>(null);
 
   const refToServices = useRef<HTMLElement>(null);
@@ -21,14 +24,12 @@ export default function Home() {
     <>
       <header className="header">
         <h4>{TextVariables.companyName}</h4>
-        <nav className="header__nav">
-          <ul className="header__nav_item"><a href="#home">Home</a></ul>
-          <ul className="header__nav_item"><a href="#about">About</a></ul>
-          <ul className="header__nav_item"><a href="#services">Services</a></ul>
-          <ul className="header__nav_item"><a href="#contact">Contact</a></ul>
-        </nav>
+        <NavBar
+          sectionName="header"
+          elements={sections}
+        />        
         <GetQuoteButton
-          onClick={() => scrollToSection(refToContact)}          
+          onClick={() => scrollToSection(refToContact)}
           className={`button button_primary ${styles.header__button}`}
         />
       </header>
@@ -40,7 +41,7 @@ export default function Home() {
               <p className={`text text_size_m ${styles.main__home_text}`} >{TextVariables.homeSectionText}</p>
               <div className={styles.main__home_call}>
                 <GetQuoteButton
-                  onClick={() => scrollToSection(refToContact)}                  
+                  onClick={() => scrollToSection(refToContact)}
                   className={`button button_primary ${styles.main__button}`}
                 />
                 <div className={styles.call_us_now}>
@@ -110,11 +111,11 @@ export default function Home() {
             </div>
             <div className={styles.main__home_bottom_buttons}>
               <GetQuoteButton
-                onClick={() => scrollToSection(refToContact)}                
+                onClick={() => scrollToSection(refToContact)}
                 className={`button button_primary ${styles.main__button}`}
               />
               <ExploreServicesButton
-                onClick={() => scrollToSection(refToServices)}                
+                onClick={() => scrollToSection(refToServices)}
                 className={`button button_secondary ${styles.main__button}`}
               />
             </div>
@@ -184,7 +185,7 @@ export default function Home() {
               <div className={styles.main__services_covid_call}>
                 <GetQuoteButton
                   className={`button button_primary ${styles.main__button}`}
-                  onClick={() => scrollToSection(refToContact)}                  
+                  onClick={() => scrollToSection(refToContact)}
                 />
                 <div className={styles.call_us_now}>
                   <Image
@@ -229,7 +230,7 @@ export default function Home() {
               </div>
               <GetQuoteButton
                 className={`button button_primary ${styles.main__button}`}
-                onClick={() => scrollToSection(refToContact)}                
+                onClick={() => scrollToSection(refToContact)}
               />
             </div>
           </div>
@@ -254,7 +255,7 @@ export default function Home() {
               </ul>
               <GetQuoteButton
                 className={`button button_primary ${styles.main__button}`}
-                onClick={() => scrollToSection(refToContact)}                
+                onClick={() => scrollToSection(refToContact)}
               />
             </div>
             <div className={styles.image_wrapper_forth}>
@@ -368,7 +369,7 @@ export default function Home() {
             <p className={`text text_size_s ${styles.container__block_text}`}>Don&apos;t wait, call us now!</p>
             <GetQuoteButton
               className={`button button_primary ${styles.main__button}`}
-              onClick={() => scrollToSection(refToContact)}              
+              onClick={() => scrollToSection(refToContact)}
             />
           </div>
         </div>
