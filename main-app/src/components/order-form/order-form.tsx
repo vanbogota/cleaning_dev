@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { OrderFormProps } from "./types";
 import styles from "@/app/page.module.scss";
 
@@ -17,13 +18,17 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
 
   const [minDate, setMinDate] = useState('');
 
-  useEffect(()=>{
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
     const today = new Date();
     const tommorow = new Date(today);
-    tommorow.setDate(today.getDate()+1);
+    tommorow.setDate(today.getDate() + 1);
     const formattedDate = tommorow.toISOString().split('T')[0];
     setMinDate(formattedDate)
-  },[])
+  }, [])
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -36,7 +41,20 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formData);
+    setIsLoading(true);
+    setIsSuccess(false);
+    setIsError(false);
+
+    try {
+      await axios.post('/api/send-email', formData);
+      setIsLoading(false);
+      setIsSuccess(true);
+      onSubmit(formData);
+    } catch (error) {
+      setIsLoading(false);
+      setIsError(true);
+    }
+
     setFormData({
       name: '',
       address: '',
