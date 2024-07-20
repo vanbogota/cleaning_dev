@@ -1,4 +1,4 @@
-import { NavBarProps } from "@/utils/componentProps";
+import { NavBarProps } from "./types";
 
 
 export default function NavBar({ sectionName, elements }: NavBarProps) {

@@ -1,5 +1,6 @@
 export const companyName = "Notos Oy";
-export const buttonText = "Get a quote";
+export const buttonLabelQuote = "Get a quote";
+export const buttonLabelServices = "ExploreServices";
 export const telNumber = "+358 45 893-50-05";
 export const eMail = "notos.oy@gmail.com";
 export const adress = "Marjaniementie 10 B, 00930, Helsinki";

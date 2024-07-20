@@ -1,26 +1,6 @@
 //my css
-.image_wrapper_first{
-  position: relative;
-  width: 50vw;
-  height: 50.97vw;  
-}
-
-.image_wrapper_second{
-  position: relative;
-  width: 36vw;
-  height: 47vw;  
-}
-
-.image_wrapper_three{
-  position: relative;
-  width: 44.4vw;
-  height: 47.18vw;
-}
-
-.image_wrapper_forth{
-  position: relative;
-  width: 47.64vw;
-  height: 40.9vw;
+.image_wrapper{
+  position: relative;    
 }
 
 .header__button {
@@ -103,6 +83,7 @@
 .main__home_bottom_steps {
   display: flex;
   margin: 64px 0 56px;
+  align-items: baseline;
 }
 
 .main__home_bottom_step {
@@ -134,6 +115,7 @@
 .main__services_cards {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .main__services_card {
@@ -212,26 +194,15 @@
   max-width: 350px;
 
   li {
-    position: relative;
-    padding-left: 34px;
+    display: flex;
+    align-items: center;
     margin-bottom: 30px;
     line-height: 20px;
     font-size: var(--text-content-medium);
     font-weight: 700;
     color: var(--text-color-heading);
   }
-
-  li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 26px;
-    height: 26px;
-    background-image: url('/images/small_listpoint.svg');
-    background-size: cover;
-  }
+  
 }
 
 .main__services_differencies {

@@ -2,10 +2,11 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import { useRef } from "react";
-import GetQuoteButton from "@/components/GetQuoteButton";
-import ExploreServicesButton from "@/components/ExploreServicesButton";
+import Button from "@/components/custom-button";
 import * as TextVariables from "@/utils/textVariables";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/nav-bar";
+import OrderForm, { FormData } from "@/components/order-form";
+import UnsortedList from "@/components/unsorted-list";
 
 export default function Home() {
   const sections = ['Home', 'About', 'Services', 'Contact'];
@@ -20,6 +21,10 @@ export default function Home() {
     }
   }
 
+  const handleFormSubmit = (formData: FormData) => {
+    console.log('Form submitted:', formData);
+  };
+
   return (
     <>
       <header className="header">
@@ -28,9 +33,10 @@ export default function Home() {
           sectionName="header"
           elements={sections}
         />        
-        <GetQuoteButton
+        <Button
           onClick={() => scrollToSection(refToContact)}
           className={`button button_primary ${styles.header__button}`}
+          label={TextVariables.buttonLabelQuote}
         />
       </header>
       <main className={styles.main}>
@@ -40,9 +46,10 @@ export default function Home() {
               <h1 className={styles.main__home_title}>Quality cleaning for your home</h1>
               <p className={`text text_size_m ${styles.main__home_text}`} >{TextVariables.homeSectionText}</p>
               <div className={styles.main__home_call}>
-                <GetQuoteButton
+                <Button
                   onClick={() => scrollToSection(refToContact)}
                   className={`button button_primary ${styles.main__button}`}
+                  label={TextVariables.buttonLabelQuote}
                 />
                 <div className={styles.call_us_now}>
                   <Image
@@ -58,13 +65,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.image_wrapper_first}>
+            <div className={styles.image_wrapper} style={{width: "50vw", height: "50.97vw"}}>
               <Image
                 className={styles.main__img_home_top}
                 src={"./images/big_cleaner_woman_top.svg"}
                 alt="bcwt"
                 layout="fill"
-                objectFit="cover"
+                objectFit="cover"               
                 priority />
             </div>
           </div>
@@ -110,13 +117,15 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.main__home_bottom_buttons}>
-              <GetQuoteButton
+              <Button
                 onClick={() => scrollToSection(refToContact)}
                 className={`button button_primary ${styles.main__button}`}
+                label={TextVariables.buttonLabelQuote}
               />
-              <ExploreServicesButton
+              <Button
                 onClick={() => scrollToSection(refToServices)}
                 className={`button button_secondary ${styles.main__button}`}
+                label={TextVariables.buttonLabelServices}
               />
             </div>
           </div>
@@ -160,13 +169,13 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.main__services_covid}>
-            <div className={styles.image_wrapper_second}>
+            <div className={styles.image_wrapper} style={{width: "36vw", height: "47vw"}}>
               <Image
                 className={styles.main__services_covid_img}
                 src={"./images/big_cleaner_woman_center.svg"}
                 alt="bcwc"
                 layout="fill"
-                objectFit="cover"
+                objectFit="cover"                
                 priority
               />
             </div>
@@ -183,9 +192,10 @@ export default function Home() {
                 {TextVariables.covidText}
               </p>
               <div className={styles.main__services_covid_call}>
-                <GetQuoteButton
+                <Button
                   className={`button button_primary ${styles.main__button}`}
                   onClick={() => scrollToSection(refToContact)}
+                  label={TextVariables.buttonLabelQuote}
                 />
                 <div className={styles.call_us_now}>
                   <Image
@@ -203,7 +213,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.main__services_description}>
-            <div className={styles.image_wrapper_three}>
+            <div className={styles.image_wrapper} style={{width: "44.4vw", height: "47.18vw"}}>
               <Image
                 src={"./images/big_house.svg"}
                 alt="bh"
@@ -217,20 +227,15 @@ export default function Home() {
                 {TextVariables.weCoverAllAreas}
               </p>
               <div className={styles.main__services_areas}>
-                <ul className={styles.main__services_areas_list}>
-                  <li>Bathrooms</li>
-                  <li>Kitchens</li>
-                  <li>Living Rooms</li>
-                  <li>Carpets</li>
-                  <li>Bedrooms</li>
-                  <li>Offices</li>
-                  <li>Businesses</li>
-                  <li>Windows</li>
-                </ul>
+                <UnsortedList
+                className={styles.main__services_areas_list}
+                listItemsNames={["Bathrooms","Kitchens","Living Rooms","Carpets","Bedrooms","Offices", "Businesses","Windows"]}
+                />                
               </div>
-              <GetQuoteButton
+              <Button
                 className={`button button_primary ${styles.main__button}`}
                 onClick={() => scrollToSection(refToContact)}
+                label={TextVariables.buttonLabelQuote}
               />
             </div>
           </div>
@@ -253,12 +258,13 @@ export default function Home() {
                   <p className={styles.p__differencies_pluses}>Jobs done</p>
                 </li>
               </ul>
-              <GetQuoteButton
+              <Button
                 className={`button button_primary ${styles.main__button}`}
                 onClick={() => scrollToSection(refToContact)}
+                label={TextVariables.buttonLabelQuote}
               />
             </div>
-            <div className={styles.image_wrapper_forth}>
+            <div className={styles.image_wrapper} style={{width: "47.64vw", height: "40.9vw"}}>
               <Image
                 src={"./images/big_cleaner_man.svg"}
                 alt="bcm"
@@ -292,48 +298,7 @@ export default function Home() {
             <h4 className={styles.main__contact_title}>Not convinced yet?</h4>
             <p className={`text text_size_m ${styles.main__contact_text}`}>{TextVariables.notConvincedYet}</p>
           </div>
-          <form action="" className={styles.orderForm}>
-            <div className={styles.orderForm__group}>
-              <label htmlFor="name" className={styles.orderForm__label}>Full name</label>
-              <input type="text" name="name" id="name" className={styles.orderForm__input} />
-            </div>
-            <div className={styles.orderForm__group}>
-              <label htmlFor="address" className={styles.orderForm__label}>Address</label>
-              <input type="text" name="address" id="address" className={styles.orderForm__input} />
-            </div>
-            <div className={styles.orderForm__group}>
-              <label htmlFor="service" className={styles.orderForm__label}>Requested service</label>
-              <input type="text" name="service" id="service" className={styles.orderForm__input} />
-            </div>
-            <div className={styles.orderForm__group}>
-              <label htmlFor="phone" className={styles.orderForm__label}>Phone number</label>
-              <input type="tel" name="phone" id="phone" className={styles.orderForm__input} />
-            </div>
-            <div className={styles.orderForm__group}>
-              <label htmlFor="email" className={styles.orderForm__label}>Email</label>
-              <input type="email" name="email" id="email" className={styles.orderForm__input} />
-            </div>
-            <div className={styles.orderForm__group}>
-              <label htmlFor="date" className={styles.orderForm__label}>Day of service</label>
-              <input
-                type="date"
-                name="date"
-                id="date"
-                className={styles.orderForm__input}
-              />
-            </div>
-            <div className={`${styles.orderForm__group} ${styles.orderForm__textarea}`}>
-              <label htmlFor="note" className={styles.orderForm__label}>Add a note</label>
-              <textarea
-                name="note"
-                id="note"
-                maxLength={200}
-                className={`${styles.orderForm__input} ${styles.orderForm__textarea}`}
-                spellCheck="true"
-              />
-            </div>
-            <button type="submit" className={`button button_primary ${styles.main__button}`}>Submit message</button>
-          </form>
+          <OrderForm onSubmit={handleFormSubmit}/>          
         </section>
       </main>
       <footer className={`footer`}>
@@ -367,9 +332,10 @@ export default function Home() {
             </h6>
             <p className={styles.call_us_now__number} style={{ color: "#0075FF" }}>{TextVariables.telNumber}</p>
             <p className={`text text_size_s ${styles.container__block_text}`}>Don&apos;t wait, call us now!</p>
-            <GetQuoteButton
+            <Button
               className={`button button_primary ${styles.main__button}`}
               onClick={() => scrollToSection(refToContact)}
+              label={TextVariables.buttonLabelQuote}
             />
           </div>
         </div>
