@@ -39,7 +39,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
     });
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setIsSuccess(false);
@@ -69,12 +69,15 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
   return (
     <form onSubmit={handleSubmit} className={styles.orderForm}>
       <div className={styles.orderForm__group}>
-        <label htmlFor="name" className={styles.orderForm__label}>Full name</label>
+        <label htmlFor="name" className={styles.orderForm__label}>Your name</label>
         <input
           type="text"
           name="name"
           id="name"
           autoComplete="name"
+          placeholder="Name"
+          pattern="[A-Za-z]"
+          title="Name should contain only letters"
           required
           maxLength={50}
           className={styles.orderForm__input}
@@ -83,7 +86,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
         />
       </div>
       <div className={styles.orderForm__group}>
-        <label htmlFor="address" className={styles.orderForm__label}>Address</label>
+        <label htmlFor="address" className={styles.orderForm__label}>Address of the house</label>
         <input
           type="text"
           name="address"
