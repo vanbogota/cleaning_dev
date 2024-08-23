@@ -1,4 +1,4 @@
-const { PHASE_PRODUCTION_BUILD } = require('next/constants')
+//const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 const path = require('path')
 
 
@@ -9,13 +9,13 @@ module.exports = (phase) => {
       return config;
     }
   }
-  if (phase === PHASE_PRODUCTION_BUILD) {
-    return {
-      ...config,
-      output: 'export',
-      trailingSlash: true,
-      basePath: "/cleaning",
-    }
-  }
+  // if (phase === PHASE_PRODUCTION_BUILD) {
+  //   return {
+  //     ...config,
+  //     output: 'export',
+  //     trailingSlash: true,
+  //     basePath: "/cleaning",
+  //   }
+  // }
   return config;
 }
