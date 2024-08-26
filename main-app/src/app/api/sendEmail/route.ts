@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { CustomFormData } from "@/components/order-form/types";
 
-const email = "vanbog@mail.ru";
+const email = process.env.EMAIL_USER;
+const password = process.env.EMAIL_PASS;
 
 const transporter = nodemailer.createTransport({
   host: "smtp.mail.ru",
@@ -10,7 +11,7 @@ const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: email,
-    pass: "J4X0Y33J4dvRY5L3CrCh",
+    pass: password,
   },
 });
 
