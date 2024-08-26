@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { OrderFormProps } from "./types";
+import { CustomFormData, OrderFormProps } from "./types";
 import styles from "@/app/page.module.scss";
 
 const options = ['House Cleaning', 'Office cleaning', 'Moving cleaning', 'Airbnb cleaning'];
 
-export default function OrderForm({ onSubmit }: OrderFormProps) {
-  const [formData, setFormData] = useState({
+export default function OrderForm() {
+  const [formData, setFormData] = useState<CustomFormData>({
     name: '',
     address: '',
     option: '',
@@ -46,37 +46,50 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
     setIsError(false);
 
     try {
-      await axios.post('/api/send-email', formData);
-      setIsLoading(false);
-      setIsSuccess(true);
-      onSubmit(formData);
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if(response.ok){
+        setIsLoading(false);
+        setIsSuccess(true);
+        setFormData({
+          name: '',
+          address: '',
+          option: '',
+          phone: '',
+          email: '',
+          date: '',
+          note: ''
+        });
+
+      }else{
+        throw new Error('Failed to send email');
+      }            
     } catch (error) {
       setIsLoading(false);
       setIsError(true);
+      console.log(error);
     }
 
-    setFormData({
-      name: '',
-      address: '',
-      option: '',
-      phone: '',
-      email: '',
-      date: '',
-      note: ''
-    })
+    
   }
 
   return (
     <form onSubmit={handleSubmit} className={styles.orderForm}>
       <div className={styles.orderForm__group}>
-        <label htmlFor="name" className={styles.orderForm__label}>Your name</label>
+        <label htmlFor="name" className={styles.orderForm__label}>Your name*</label>
         <input
           type="text"
           name="name"
           id="name"
           autoComplete="name"
           placeholder="Name"
-          pattern="[A-Za-z]"
+          pattern="^[a-zA-Z\s]+$"
           title="Name should contain only letters"
           required
           maxLength={50}
@@ -86,7 +99,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
         />
       </div>
       <div className={styles.orderForm__group}>
-        <label htmlFor="address" className={styles.orderForm__label}>Address of the house</label>
+        <label htmlFor="address" className={styles.orderForm__label}>Address of the house*</label>
         <input
           type="text"
           name="address"
@@ -98,7 +111,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
         />
       </div>
       <div className={styles.orderForm__group}>
-        <label htmlFor="option" className={styles.orderForm__label}>Requested service</label>
+        <label htmlFor="option" className={styles.orderForm__label}>Requested service*</label>
         <input
           list="options"
           name="option"
@@ -115,7 +128,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
         </datalist>
       </div>
       <div className={styles.orderForm__group}>
-        <label htmlFor="phone" className={styles.orderForm__label}>Phone number</label>
+        <label htmlFor="phone" className={styles.orderForm__label}>Phone number*</label>
         <input
           type="tel"
           name="phone"
@@ -131,7 +144,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
         />
       </div>
       <div className={styles.orderForm__group}>
-        <label htmlFor="email" className={styles.orderForm__label}>Email</label>
+        <label htmlFor="email" className={styles.orderForm__label}>Email*</label>
         <input
           type="email"
           name="email"
@@ -144,7 +157,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
         />
       </div>
       <div className={styles.orderForm__group}>
-        <label htmlFor="date" className={styles.orderForm__label}>Day of service</label>
+        <label htmlFor="date" className={styles.orderForm__label}>Desired day of service</label>
         <input
           type="date"
           name="date"
@@ -168,6 +181,10 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
         />
       </div>
       <button type="submit" className={`button button_primary ${styles.main__button}`}>Submit message</button>
+      <p style={{color: 'grey'}}>* - this information is necessary</p>
+      {isLoading && <p style={{color: 'yellow'}}>Loading...</p>}
+      {isSuccess && <p style={{color: 'green'}}>Aplication sent. We will call you back shortly.</p>}
+      {isError && <p style={{color: 'red'}}>Failed to send request. Please make request by phone.</p>}
     </form>
   )
 }

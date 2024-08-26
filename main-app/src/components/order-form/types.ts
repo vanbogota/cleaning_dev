@@ -1,8 +1,8 @@
 export type OrderFormProps = {    
-    onSubmit: (formData: FormData) => void,
+    onSubmit: (formData: CustomFormData) => void,
 }
 
-export type FormData = {
+export type CustomFormData = {
     name: string,
     address: string,
     option: string,
