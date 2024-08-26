@@ -5,7 +5,7 @@ import { useRef } from "react";
 import Button from "@/components/custom-button";
 import * as TextVariables from "@/utils/textVariables";
 import NavBar from "@/components/nav-bar";
-import OrderForm, { FormData } from "@/components/order-form";
+import OrderForm, { CustomFormData } from "@/components/order-form";
 import UnsortedList from "@/components/unsorted-list";
 
 export default function Home() {
@@ -20,10 +20,6 @@ export default function Home() {
       element.current.scrollIntoView({ behavior: "smooth" })
     }
   }
-
-  const handleFormSubmit = (formData: FormData) => {
-    console.log('Form submitted:', formData);
-  };
 
   return (
     <>
@@ -298,7 +294,7 @@ export default function Home() {
             <h4 className={styles.main__contact_title}>Not convinced yet?</h4>
             <p className={`text text_size_m ${styles.main__contact_text}`}>{TextVariables.notConvincedYet}</p>
           </div>
-          <OrderForm onSubmit={handleFormSubmit}/>          
+          <OrderForm/>          
         </section>
       </main>
       <footer className={`footer`}>
