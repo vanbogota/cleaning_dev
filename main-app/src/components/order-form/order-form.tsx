@@ -99,12 +99,13 @@ export default function OrderForm() {
         />
       </div>
       <div className={styles.orderForm__group}>
-        <label htmlFor="address" className={styles.orderForm__label}>Address of the house*</label>
+        <label htmlFor="address" className={styles.orderForm__label}>Address of the house</label>
         <input
           type="text"
           name="address"
           id="address"
           autoComplete="address"
+          placeholder="Street name, house and apt. numbers, zip code"
           className={styles.orderForm__input}
           value={formData.address}
           onChange={handleChange}
@@ -150,6 +151,7 @@ export default function OrderForm() {
           name="email"
           id="email"
           autoComplete="email"
+          placeholder="example@domain.fi"
           required
           className={styles.orderForm__input}
           value={formData.email}
@@ -162,7 +164,7 @@ export default function OrderForm() {
           type="date"
           name="date"
           id="date"
-          min={minDate}
+          min={minDate}          
           className={styles.orderForm__input}
           value={formData.date}
           onChange={handleChange}
