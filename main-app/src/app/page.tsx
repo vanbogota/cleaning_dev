@@ -82,7 +82,7 @@ export default function Home() {
                 <Image
                   className={styles.main__home_bottom_step_img}
                   src={"./images/main_schedule.svg"}
-                  alt="ms"
+                  alt="time schedule"
                   width={240}
                   height={240}
                 />
@@ -92,8 +92,8 @@ export default function Home() {
               <div className={styles.main__home_bottom_step}>
                 <Image
                   className={styles.main__home_bottom_step_img}
-                  src={"./images/main_paycards.svg"}
-                  alt="ms"
+                  src={"./images/main_vacuumcleaner.svg"}
+                  alt="vacuum cleaner"
                   width={240}
                   height={240}
                 />
@@ -103,8 +103,8 @@ export default function Home() {
               <div className={styles.main__home_bottom_step}>
                 <Image
                   className={styles.main__home_bottom_step_img}
-                  src={"./images/main_vacuumcleaner.svg"}
-                  alt="ms"
+                  src={"./images/main_paycards.svg"}
+                  alt="paycards"
                   width={240}
                   height={240}
                 />
@@ -134,9 +134,10 @@ export default function Home() {
               <Image
                 className={styles.main__services_card_img}
                 src={"./images/main_house.svg"}
-                alt="mh"
+                alt="house cleaning"
                 width={220}
                 height={190}
+                style={{minHeight: 224}}
               />
               <h5 className={styles.main__services_card_title}>House cleaning</h5>
               <p className={`text text_size_m ${styles.main__services_card_text}`}>{TextVariables.houseCleaning}</p>
@@ -145,9 +146,10 @@ export default function Home() {
               <Image
                 className={styles.main__services_card_img}
                 src={"./images/main_office.svg"}
-                alt="mo"
+                alt="office cleaning"
                 width={220}
                 height={224}
+                style={{minHeight: 224}}
               />
               <h5 className={styles.main__services_card_title}>Office cleaning</h5>
               <p className={`text text_size_m ${styles.main__services_card_text}`}>{TextVariables.officeCleaning}</p>
@@ -156,9 +158,10 @@ export default function Home() {
               <Image
                 className={styles.main__services_card_img}
                 src={"./images/main_industrial.svg"}
-                alt="mi"
+                alt="airbnb cleaning"
                 width={250}
                 height={220}
+                style={{minHeight: 224}}
               />
               <h5 className={styles.main__services_card_title}>Moving cleaning</h5>
               <p className={`text text_size_m ${styles.main__services_card_text}`}>{TextVariables.movingCleaning}</p>

@@ -4,7 +4,6 @@ import { Roboto } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@/styles/globals.scss";
 
-
 const inter = Roboto({ weight: "400", style: "normal", subsets:['latin'] });
 
 export const metadata: Metadata = {

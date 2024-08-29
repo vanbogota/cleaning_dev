@@ -67,23 +67,25 @@
 
 .main__home_bottom {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column;  
 }
 
 .main__home_bottom_title {
   margin-bottom: 21px;
+  align-self: center;
 }
 
 .about__text_intro {
   max-width: 1000px;
   text-align: center;
+  align-self: center;
 }
 
 .main__home_bottom_steps {
   display: flex;
   margin: 64px 0 56px;
   align-items: baseline;
+  justify-content: space-around;
 }
 
 .main__home_bottom_step {
@@ -98,13 +100,14 @@
 }
 
 .main__home_bottom_step_text {
-  max-width: 412px;
-  text-align: center;
+  max-width: 400px;
+  text-align: justify;
 }
 
 .main__home_bottom_buttons {
   display: flex;
   gap: 28px;
+  align-self: center;
 }
 
 .main__services_heading_title {
@@ -136,7 +139,8 @@
 }
 
 .main__services_card_text {
-  text-align: center;
+  text-align: justify;
+  min-height: 300px;
 }
 
 .main__services_covid {
