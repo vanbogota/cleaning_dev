@@ -1,5 +1,5 @@
 "use client"
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./page.module.scss";
 import { useRef } from "react";
 import Button from "@/components/custom-button";
