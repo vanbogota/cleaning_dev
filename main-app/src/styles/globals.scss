@@ -2,20 +2,20 @@
   --max-width: 1440px;
   --button-border-radius: 14px;
 
-  --text-heading-max: 68px;
-  --text-heading-big: 54px;
-  --text-heading-medium: 48px;
-  --text-heading-main: 28px;
-  --text-heading-small: 24px;
-  --text-heading-supersmall: 20px;
+  --text-heading-max: 4.25rem;//68px;
+  --text-heading-big: 3.375rem;//54px;
+  --text-heading-medium: 3rem;//48px;
+  --text-heading-main: 1.75rem;//28px;
+  --text-heading-small: 1.5rem;//24px;
+  --text-heading-supersmall: 1.25rem;//20px;
 
-  --text-content-max: 28px;
-  --text-content-main: 21px;
-  --text-content-medium: 18px;
-  --text-content-small: 16px;
+  --text-content-max: 1.75rem;//28px;
+  --text-content-main: 1.3125rem;//21px;
+  --text-content-medium: 1.125rem;//18px;
+  --text-content-small: 1rem;
 
-  --text-button-main: 18px;
-  --text-button-small: 16px;
+  --text-button-main: 1.125rem;
+  --text-button-small: 1rem;
 
   --text-color-heading: var(--secondary-color);
   --text-color-main: #6E7191;
@@ -27,6 +27,7 @@
   --button-primary-color: #0075FF;
   --button-secondary-color: var(--primary-color);
 
+  --padding-base: 7.5vw;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -37,6 +38,22 @@
 html,
 body {
   max-width: 100vw;
+}
+
+html{
+   font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  html {
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+      font-size: 10px;
+  }
 }
 
 body {
@@ -86,7 +103,7 @@ h6{
 .text {
   color: var(--text-color-main);
   font-weight: 400;  
-  line-height: 30px;
+  line-height: 1.875rem;
 }
 
 .text_size_m{
@@ -102,9 +119,10 @@ h6{
 
 .header {
   display: flex;
-  height: 110px;  
+  height: 7.5vw;  
+  max-height: 110px;
   align-items: center;
-  padding: 0 110px;  
+  padding: 0 var(--padding-base);  
   position: fixed;
   right: 0;
   left: 0;
@@ -126,11 +144,11 @@ h6{
   font-size: var(--text-content-medium);
   font-weight: 400;
   color: var(--secondary-color);
-  line-height: 30px;
+  line-height: 1.875rem;
 }
 
 .main__section {
-  padding: 110px;
+  padding: var(--padding-base);
 }
 
 #home{
@@ -141,7 +159,7 @@ h6{
   border: 0;
   background: #DCDDEB;
   height: 1px;
-  margin: 0 110px;
+  margin: 0 var(--padding-base);
 }
 
 .button {
@@ -171,16 +189,3 @@ h6{
 .span_color_blue{
   color:#0075FF;
 }
-
-
-// input[type="date"]::-webkit-inner-spin-button,
-// input[type="date"]::-webkit-calendar-picker-indicator {
-//     display: none;
-//     -webkit-appearance: none;
-// }
-
-// input[type="date"]::-moz-placeholder, /* Firefox */
-// input[type="date"]::-ms-input-placeholder, /* Internet Explorer 10-11 */
-// input[type="date"]::-webkit-input-placeholder { /* WebKit browsers */
-//     opacity: 0;
-// }

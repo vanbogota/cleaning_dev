@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { UnsrortedListProps } from "./types";
 
 export default function UnsortedList({ className, listItemsNames }: UnsrortedListProps) {
@@ -12,11 +12,14 @@ export default function UnsortedList({ className, listItemsNames }: UnsrortedLis
                         alt="slp"
                         width={26}
                         height={26}
-                        style={{ marginRight: 10 }}
-                    />
+                        style={{
+                            marginRight: 10,
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
                     {itemName}
                 </li>
             ))}
         </ul>
-    )
+    );
 }
