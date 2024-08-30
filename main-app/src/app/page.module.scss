@@ -4,13 +4,13 @@
 }
 
 .header__button {
-  padding: 17px 24px;
+  padding: 1rem 1.5rem;
   font-size: var(--text-button-small);
   margin-left: auto;
 }
 
 .main__button {
-  padding: 26px 38px;
+  padding: 1.6rem 2.375rem;
   font-size: var(--text-button-main);
 }
 
@@ -21,11 +21,11 @@
 
 .main__home_title {
   max-width: 518px;
-  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
 }
 
 .main__home_text {
-  margin-bottom: 34px;
+  margin-bottom: 2.125rem;
   max-width: 591px;
   text-align: justify;
 }
@@ -36,7 +36,7 @@
 }
 
 .call_us_now {
-  margin-left: 28px;
+  margin-left: 1.75rem;
   display: flex;
   align-items: center;
 
@@ -46,7 +46,7 @@
   }
 
   .call_us_now__frame {
-    margin-left: 16px;
+    margin-left: 1rem;
   }
 }
 
@@ -62,7 +62,7 @@
   font-size: var(--text-content-max);
   color: var(--text-color-heading);
   font-weight: 700;
-  line-height: 36px;
+  line-height: 2.25rem;
 }
 
 .main__home_bottom {
@@ -107,7 +107,7 @@
 
 .main__home_bottom_buttons {
   display: flex;
-  gap: 28px;
+  gap: 1.75rem;
   align-self: center;
 }
 
@@ -201,8 +201,8 @@
   li {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
-    line-height: 20px;
+    margin-bottom: 1.875rem;
+    line-height: 1.25rem;
     font-size: var(--text-content-medium);
     font-weight: 700;
     color: var(--text-color-heading);
@@ -230,7 +230,7 @@
   margin-bottom: 47px;
 
   li {
-    margin-right: 38px;
+    margin-right: 2.375rem;
   }
 }
 
@@ -270,36 +270,33 @@
 .orderForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  padding: 85px 61px;
+  gap: 2rem;
+  padding: 5.3rem 3.8rem;
   background-color: var(--primary-color);
-  border-radius: 16px;
+  border-radius: 1rem;
   box-shadow: 0 2px 6px #14142B0A;
 }
 
 .orderForm__group {
-  display: flex;
-  flex-direction: column;
+  display: grid;  
 }
 
 .orderForm__textarea {
-  grid-column: 1/-1;
-  grid-row: 4;
-  width: 550px !important;
+  grid-column: 1/-1;  
 }
 
 .orderForm__label {
   font-size: var(--text-content-medium);
-  line-height: 30px;
+  line-height: 1.875rem;
   color: var(--text-color-heading);
 }
 
 .orderForm__input {
-  height: 72px;
+  height: 4.5rem;
   box-sizing: border-box;
-  margin-top: 12px;
+  margin-top: 0.75rem;
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 1rem;
   box-shadow: 0 2px 12px #14142B14;
   color: var(--text-color-heading);
   padding: 10px;
@@ -337,7 +334,7 @@
   margin: 140px 0 116px;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .container__block {
@@ -352,7 +349,7 @@
   color: var(--text-color-heading);
   font-size: var(--text-content-medium);
   font-weight: 700;
-  line-height: 20px;
+  line-height: 1.25rem;
   margin-block: 18px 8px;
 }
 

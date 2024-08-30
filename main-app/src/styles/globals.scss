@@ -1,6 +1,6 @@
 :root {
   --max-width: 1440px;
-  --button-border-radius: 14px;
+  --button-border-radius: 0.875rem;
 
   --text-heading-max: 4.25rem;//68px;
   --text-heading-big: 3.375rem;//54px;
@@ -15,7 +15,7 @@
   --text-content-small: 1rem;
 
   --text-button-main: 1.125rem;
-  --text-button-small: 1rem;
+  --text-button-small: 1rem; //16px
 
   --text-color-heading: var(--secondary-color);
   --text-color-main: #6E7191;
@@ -41,7 +41,7 @@ body {
 }
 
 html{
-   font-size: 14px;
+   font-size: 16px;
 }
 
 @media (max-width: 850px) {
@@ -132,7 +132,7 @@ h6{
 
 .header__nav {
   display: flex;
-  margin-left: 40px;
+  margin-left: 2.5rem;
 }
 
 .header__nav_list {
