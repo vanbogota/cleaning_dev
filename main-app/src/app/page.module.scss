@@ -80,7 +80,7 @@
 }
 
 .main__home_bottom_title {
-  margin-bottom: 21px;
+  margin-bottom: 1.31rem;
   align-self: center;
 }
 
@@ -92,7 +92,7 @@
 
 .main__home_bottom_steps {
   display: flex;
-  margin: 64px 0 56px;
+  margin: 4rem 0 3.5rem;
   align-items: baseline;
   justify-content: space-around;
   gap: 1rem;
@@ -106,7 +106,7 @@
 }
 
 .main__home_bottom_step_title {
-  margin: 39px 0 16px;
+  margin: 2.44rem 0 1rem;
 }
 
 .main__home_bottom_step_text {
@@ -122,7 +122,7 @@
 
 .main__services_heading_title {
   max-width: 475px;
-  margin-bottom: 62px;
+  margin-bottom: 3.875rem;
 }
 
 .main__services_cards {
@@ -137,7 +137,7 @@
   justify-content: flex-end;
   align-items: center;
   width: 388px;
-  padding: 49px 38px 29px;
+  padding: 3rem 2.375rem 1.81rem;
   box-sizing: border-box;
   border: 1px solid #eff0f6;
   border-radius: 1rem;
@@ -145,7 +145,7 @@
 }
 
 .main__services_card_title {
-  margin: 24px 0 13px;
+  margin: 1.5rem 0 0.8125rem;
 }
 
 .main__services_card_text {
@@ -182,7 +182,7 @@
 
 .main__services_covid_title {
   max-width: 490px;
-  margin: 17px 0 18px;
+  margin: 1rem 0 1.125rem;
 }
 
 .main__services_covid_text {
@@ -190,7 +190,7 @@
 }
 
 .main__services_covid_call {
-  margin-top: 12px;
+  margin-top: 0.75rem;
   display: flex;
 }
 
@@ -215,12 +215,12 @@
 }
 
 .main__services_description_text {
-  margin: 19px 0 26px;
+  margin: 1.19rem 0 1.625px;
   text-align: justify;
 }
 
 .main__services_areas {
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
 }
 
 .main__services_areas_list {
@@ -247,17 +247,17 @@
 
 .main__services_differencies_title {
   max-width: 346px;
-  margin-bottom: 19px;
+  margin-bottom: 1.19rem;
 }
 
 .main__services_differencies_text {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   text-align: justify;
 }
 
 .main__services_differencies_pluses {
   display: flex;
-  margin-bottom: 47px;
+  margin-bottom: 2.93rem;
 
   li {
     margin-right: 2.375rem;
@@ -280,7 +280,7 @@
   background: #dcddeb;
   height: 1px;
   margin: 0 auto;
-  margin-block: 55px;
+  margin-block: 3.44rem;
 }
 
 .main__section_contact {
@@ -292,6 +292,18 @@
 .main__contact_content {
   max-width: 490px;
   margin-right: 1rem;
+}
+
+@media (max-width: 1157px) {
+  .main__section_contact {
+    display: grid;
+    justify-content: center;
+  }
+
+  .main__contact_content {
+    max-width: 100%;
+    margin-right: 0;
+  }
 }
 
 .main__contact_text {
@@ -308,6 +320,12 @@
   border-radius: 1rem;
   box-shadow: 0 2px 6px #14142b0a;
 }
+
+// @media (max-width: 1157px) {
+//   .orderForm {    
+//     grid-template-columns: 1fr;    
+//   }
+// }
 
 .orderForm__group {
   display: grid;
@@ -375,7 +393,7 @@
 }
 
 .container__block__title {
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 .container__block_adtitle {
@@ -383,11 +401,11 @@
   font-size: var(--text-content-medium);
   font-weight: 700;
   line-height: 1.25rem;
-  margin-block: 18px 8px;
+  margin-block: 1.125rem 0.5rem;
 }
 
 .container__block_text {
-  margin-block: 6px 18px;
+  margin-block: 0.375rem 1.125rem;
 }
 
 //from tamplate

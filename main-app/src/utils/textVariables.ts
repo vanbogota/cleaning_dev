@@ -22,7 +22,7 @@ export const weCoverAllAreas = `No corner is overlooked. Our comprehensive clean
 
 export const whatMakesUsDif = `At ${companyName}, we go above and beyond to provide exceptional cleaning services. Our dedication to quality, attention to detail, and personalized approach set us apart. With a team of trained professionals and a commitment to eco-friendly practices, we ensure your space is not only clean but also safe and healthy. Experience the difference with our reliable and customer-focused service.`
 
-export const requestQuoteToday = `Ready to experience top-notch cleaning? Fill out the form below to receive a free, no-obligation quote. Our team will get back to you promptly with a customized plan tailored to your needs. Let us help you achieve a cleaner, healthier space without any hassle.`
-export const notConvincedYet = `Try us out with no risk. Our satisfaction guarantee means you can experience our superior service firsthand. See why our clients keep coming back!`
+export const requestQuoteToday = `Ready to experience top-notch cleaning? Contact us today and tell your needs to receive a quote. Our team will get back to you promptly with a customized plan tailored to your needs. Let us help you achieve a cleaner, healthier space without any hassle.`
+export const notConvincedYet = `Try us out with no risk. Our satisfaction guarantee means you can experience our superior service firsthand. Fill out the form below and see why our clients keep coming back!`
 
-export const footerText = `Transform your home with our impeccable cleaning services. Discover the difference ${companyName} can make in your life. Contact us today and let us bring cleanliness and comfort to your doorstep.`
+export const footerText = `Transform your home with our impeccable cleaning services. Discover the difference ${companyName} can make in your life.  and let us bring cleanliness and comfort to your doorstep.`
