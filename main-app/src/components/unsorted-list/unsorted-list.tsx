@@ -9,7 +9,7 @@ export default function UnsortedList({ className, listItemsNames }: UnsrortedLis
                 <li key={index}>
                     <Image
                         src={"./images/small_listpoint.svg"}
-                        alt="slp"
+                        alt="item of list"
                         width={26}
                         height={26}
                         style={{

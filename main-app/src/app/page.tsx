@@ -64,11 +64,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.image_wrapper} style={{width: "50vw", height: "50.97vw"}}>
-            <Image
-              className={styles.main__img_home_top}
+          <div className={`${styles.image_wrapper} ${styles.image_wrapper_hidden}`} style={{width: "50vw", height: "50.97vw"}}>
+            <Image              
               src={"./images/big_cleaner_woman_top.svg"}
-              alt="bcwt"
+              alt="cleaner woman with vacuum"
               priority
               fill
               sizes="100vw"
@@ -192,11 +191,10 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.main__services_covid}>
-          <div className={styles.image_wrapper} style={{width: "36vw", height: "47vw"}}>
-            <Image
-              className={styles.main__services_covid_img}
+          <div className={`${styles.image_wrapper} ${styles.image_wrapper_hidden}`} style={{width: "36vw", height: "47vw"}}>
+            <Image              
               src={"./images/big_cleaner_woman_center.svg"}
-              alt="bcwc"
+              alt="woman cleaner in covid section"
               priority
               fill
               sizes="100vw"
@@ -226,7 +224,7 @@ export default function Home() {
                 <Image
                   className={styles.call_us_now__img}
                   src={"./images/small_phone.svg"}
-                  alt="sp"
+                  alt="phone"
                   width={72}
                   height={72}
                   style={{
@@ -242,10 +240,10 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.main__services_description}>
-          <div className={styles.image_wrapper} style={{width: "44.4vw", height: "47.18vw"}}>
+          <div className={`${styles.image_wrapper} ${styles.image_wrapper_hidden}`} style={{width: "44.4vw", height: "47.18vw"}}>
             <Image
               src={"./images/big_house.svg"}
-              alt="bh"
+              alt="house with cleaned places"
               fill
               sizes="100vw"
               style={{
@@ -295,10 +293,10 @@ export default function Home() {
               label={TextVariables.buttonLabelQuote}
             />
           </div>
-          <div className={styles.image_wrapper} style={{width: "47.64vw", height: "40.9vw"}}>
+          <div className={`${styles.image_wrapper} ${styles.image_wrapper_hidden}`} style={{width: "47.64vw", height: "40.9vw"}}>
             <Image
               src={"./images/big_cleaner_man.svg"}
-              alt="bcm"
+              alt="big picture of cleaner man"
               fill
               sizes="100vw"
               style={{
@@ -319,7 +317,7 @@ export default function Home() {
             <Image
               className={styles.call_us_now__img}
               src={"./images/small_phone.svg"}
-              alt="sp"
+              alt="phone"
               width={72}
               height={72}
               style={{
@@ -344,7 +342,7 @@ export default function Home() {
           <h4 className={styles.container__block__title}>
             Quality cleaning for your home
           </h4>
-          <p className={`text text_size_s`}>{TextVariables.footerText}</p>
+          <p className={`text text_size_s ${styles.footer_text}`}>{TextVariables.footerText}</p>
         </div>
         <div className={styles.container__block}>
           <h6 className={styles.container__block__title}>

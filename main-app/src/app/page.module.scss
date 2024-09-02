@@ -1,6 +1,12 @@
 //my css
-.image_wrapper{
-  position: relative;    
+.image_wrapper {
+  position: relative;
+}
+
+@media (max-width: 400px) {
+  .image_wrapper_hidden {
+    display: none;
+  }
 }
 
 .header__button {
@@ -14,9 +20,12 @@
   font-size: var(--text-button-main);
 }
 
-//.section__home 
-.container_space_between{  
-  justify-content: space-between;  
+.section__home {
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+.container_space_between {
+  justify-content: space-between;
 }
 
 .main__home_title {
@@ -67,7 +76,7 @@
 
 .main__home_bottom {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .main__home_bottom_title {
@@ -130,9 +139,9 @@
   width: 388px;
   padding: 49px 38px 29px;
   box-sizing: border-box;
-  border: 1px solid #EFF0F6;
-  border-radius: 16px;
-  box-shadow: 0 2px 6px #14142B0A;
+  border: 1px solid #eff0f6;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px #14142b0a;
 }
 
 .main__services_card_title {
@@ -144,16 +153,26 @@
   min-height: 300px;
 }
 
+@media (max-width: 400px) {
+  .main__services_cards {
+    display: grid;    
+  }
+
+  .main__services_card_text {    
+    min-height: fit-content;
+  }
+}
+
 .main__services_covid {
   background-color: var(--secondary-color);
-  border-radius: 24px;
-  margin: 240px 0 200px;
+  border-radius: 1.5rem;
+  margin: 15rem 0 12.5rem;
   display: flex;
   align-items: center;
 }
 
 .main__services_covid_content {
-  margin-inline: auto 74px;
+  margin-inline: auto 4.6rem;
 }
 
 .main__services_covid_title_mini {
@@ -182,11 +201,22 @@
 
 .main__services_description_content {
   max-width: 500px;
-  margin-left: 80px;
+  margin-left: 5rem;
+}
+
+@media (max-width: 400px) {
+  .main__services_description_content {    
+    margin-left: 0;
+  }
+
+  .main__services_covid_content {
+    margin: 4.6rem;
+  }
 }
 
 .main__services_description_text {
   margin: 19px 0 26px;
+  text-align: justify;
 }
 
 .main__services_areas {
@@ -207,11 +237,10 @@
     font-weight: 700;
     color: var(--text-color-heading);
   }
-  
 }
 
 .main__services_differencies {
-  margin-top: 200px;
+  margin-top: 12.5rem;
   display: flex;
   align-items: center;
 }
@@ -223,6 +252,7 @@
 
 .main__services_differencies_text {
   margin-bottom: 15px;
+  text-align: justify;
 }
 
 .main__services_differencies_pluses {
@@ -234,19 +264,20 @@
   }
 }
 
-.main__services_differencies_content{
+.main__services_differencies_content {
   max-width: 500px;
+  margin-right: 1rem;
 }
 
 .p__differencies_pluses {
   font-size: var(--text-content-medium);
   font-weight: 700;
-  color: #6E7191;
+  color: #6e7191;
 }
 
 .contact__hr {
   border: 0;
-  background: #DCDDEB;
+  background: #dcddeb;
   height: 1px;
   margin: 0 auto;
   margin-block: 55px;
@@ -260,12 +291,13 @@
 
 .main__contact_content {
   max-width: 490px;
+  margin-right: 1rem;
 }
 
 .main__contact_text {
   margin-block: 8px 11px;
+  text-align: justify;
 }
-
 
 .orderForm {
   display: grid;
@@ -274,15 +306,15 @@
   padding: 5.3rem 3.8rem;
   background-color: var(--primary-color);
   border-radius: 1rem;
-  box-shadow: 0 2px 6px #14142B0A;
+  box-shadow: 0 2px 6px #14142b0a;
 }
 
 .orderForm__group {
-  display: grid;  
+  display: grid;
 }
 
 .orderForm__textarea {
-  grid-column: 1/-1;  
+  grid-column: 1/-1;
 }
 
 .orderForm__label {
@@ -297,24 +329,21 @@
   margin-top: 0.75rem;
   border: 1px solid var(--border-color);
   border-radius: 1rem;
-  box-shadow: 0 2px 12px #14142B14;
+  box-shadow: 0 2px 12px #14142b14;
   color: var(--text-color-heading);
-  padding: 10px;
+  padding: 0.625rem;
   font-size: var(--text-content-medium);
 }
 
-.orderForm__input::placeholder {
-  //color: transparent;
+.orderForm__input::placeholder {  
   font-size: var(--text-content-medium);
 }
 
 .orderForm__input::-moz-placeholder {
-  //color: transparent;
   font-size: var(--text-content-medium);
 }
 
 .orderForm__input::-webkit-placeholder {
-  //color: transparent;
   font-size: var(--text-content-medium);
 }
 
@@ -323,18 +352,22 @@
 }
 
 .footer__container {
-  padding: 0 110px;
+  padding: 0 6.8rem;
 }
 
 .footer__container_bottom {
-  margin: 40px 0;
+  margin: 2.5rem 0;
 }
 
 .footer__container_top {
-  margin: 140px 0 116px;
+  margin: 8.75rem 0 7.25rem;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 0.625rem;
+  gap: 1rem;
+}
+
+.footer_text{
+  text-align: justify;
 }
 
 .container__block {
@@ -356,7 +389,6 @@
 .container__block_text {
   margin-block: 6px 18px;
 }
-
 
 //from tamplate
 /* Enable hover only on non-touch devices */

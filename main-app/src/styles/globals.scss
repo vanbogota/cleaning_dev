@@ -151,6 +151,12 @@ h6{
   padding: var(--padding-base);
 }
 
+@media (max-width: 400px) {
+  .main__section {
+    padding: var(--padding-base) 10px;
+  }
+}
+
 #home{
   padding-right: 0;
 }
@@ -184,6 +190,12 @@ h6{
 .container{
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 400px) {
+  .container{
+    display: grid;    
+  }
 }
 
 .span_color_blue{
