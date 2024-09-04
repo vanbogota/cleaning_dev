@@ -3,7 +3,7 @@
   position: relative;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
   .image_wrapper_hidden {
     display: none;
   }
@@ -22,7 +22,7 @@
 
 .section__home {
   margin-right: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .container_space_between {
   justify-content: space-between;
@@ -153,7 +153,7 @@
   min-height: 300px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .main__services_cards {
     display: grid;    
   }
@@ -173,6 +173,12 @@
 
 .main__services_covid_content {
   margin-inline: auto 4.6rem;
+}
+
+@media (max-width: 700px){
+  .main__services_covid_content {
+    margin: 4.6rem;
+  }
 }
 
 .main__services_covid_title_mini {
@@ -204,15 +210,12 @@
   margin-left: 5rem;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
   .main__services_description_content {    
     margin-left: 0;
-  }
-
-  .main__services_covid_content {
-    margin: 4.6rem;
-  }
+  }  
 }
+
 
 .main__services_description_text {
   margin: 1.19rem 0 1.625px;
@@ -286,7 +289,6 @@
 .main__section_contact {
   background-color: var(--background-additional);
   justify-content: space-between;
-  position: relative;
 }
 
 .main__contact_content {
@@ -298,16 +300,16 @@
   .main__section_contact {
     display: grid;
     justify-content: center;
+    width: 100vw;
   }
 
   .main__contact_content {
-    max-width: 100%;
-    margin-right: 0;
+    margin: 0;
   }
 }
 
 .main__contact_text {
-  margin-block: 8px 11px;
+  margin-block: 0.5rem 0.688rem;
   text-align: justify;
 }
 
@@ -321,11 +323,17 @@
   box-shadow: 0 2px 6px #14142b0a;
 }
 
-// @media (max-width: 1157px) {
+// @media (max-width: 500px) {
 //   .orderForm {    
-//     grid-template-columns: 1fr;    
+//     max-width: 100dvw;        
 //   }
 // }
+
+ @media (max-width: 440px) {
+   .orderForm {    
+     grid-template-columns: 1fr;        
+   }
+ }
 
 .orderForm__group {
   display: grid;
@@ -382,6 +390,12 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .footer__container_top {
+    display: grid;
+  }
 }
 
 .footer_text{
